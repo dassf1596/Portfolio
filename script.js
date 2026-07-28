@@ -213,24 +213,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroStats = document.querySelector('.hero-stats');
   if (heroStats) statsObserver.observe(heroStats);
 
-  // ============ HERO PARTICLES ============
+  // ============ HERO PARTICLES ==========
   function createParticles() {
     const container = document.getElementById('heroParticles');
-    if (!container || window.innerWidth <= 768) return;
+    if (!container) {
+      return;
+    }
 
     const particleCount = 30;
 
     for (let i = 0; i < particleCount; i++) {
-      const particle = document.createElement('div');
-      particle.style.cssText = `
-        position: absolute;
-        width: ${Math.random() * 4 + 1}px;
-        height: ${Math.random() * 4 + 1}px;
-        background: rgba(124, 92, 252, ${Math.random() * 0.4 + 0.1});
-        border-radius: 50%;
-        left: ${Math.random() * 100}%;
-        top: ${Math.random() * 100}%;
-      `;
+      const particle = document.createElement('span');
+      particle.className = 'hero-particle';
+      particle.style.left = `${anime.random(0, 100)}%`;
+      particle.style.top = `${anime.random(0, 100)}%`;
+      particle.style.width = `${anime.random(3, 8)}px`;
+      particle.style.height = particle.style.width;
+      particle.style.borderRadius = '999px';
+      particle.style.position = 'absolute';
+      particle.style.background = 'rgba(255, 255, 255, 0.35)';
+      particle.style.boxShadow = '0 0 18px rgba(124, 92, 252, 0.45)';
+      particle.style.opacity = '0.2';
       container.appendChild(particle);
 
       anime({
@@ -242,15 +245,13 @@ document.addEventListener('DOMContentLoaded', () => {
         duration: anime.random(4000, 8000),
         easing: 'easeInOutSine',
         loop: true,
-        direction: 'alternate',
-        delay: anime.random(0, 2000),
       });
     }
   }
 
   createParticles();
 
-  // ============ SCROLL REVEAL ============
+  // ============ STAGGER REVEAL ANIMATIONS ============
   const revealElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
 
   const revealObserver = new IntersectionObserver((entries) => {
@@ -336,7 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (projectPreviewModal) {
     projectPreviewModal.addEventListener('click', (event) => {
-      if (event.target.hasAttribute('data-project-modal-close')) {
+      if (event.target.closest('[data-project-modal-close]')) {
         closeProjectPreview();
       }
     });
@@ -482,14 +483,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============ CONTACT FORM ============
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      // Button animation
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.innerHTML;
-      submitBtn.innerHTML = '<span>ส่งข้อความสำเร็จ ✓</span>';
-      submitBtn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+
+      submitBtn.innerHTML = '<span>กำลังส่งข้อความ...</span>';
+      submitBtn.disabled = true;
+      submitBtn.style.background = 'linear-gradient(135deg, #2563eb, #1d4ed8)';
 
       anime({
         targets: submitBtn,
@@ -498,12 +500,39 @@ document.addEventListener('DOMContentLoaded', () => {
         easing: 'easeInOutSine',
       });
 
-      setTimeout(() => {
-        submitBtn.innerHTML = originalText;
-        submitBtn.style.background = '';
+      try {
+        const response = await fetch(contactForm.action, {
+          method: contactForm.method,
+          body: new FormData(contactForm),
+          headers: {
+            Accept: 'application/json',
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error('Form submission failed');
+        }
+
+        submitBtn.innerHTML = '<span>ส่งข้อความเรียบร้อย ✓</span>';
+        submitBtn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
         contactForm.reset();
         lucide.createIcons();
-      }, 3000);
+
+        setTimeout(() => {
+          submitBtn.innerHTML = originalText;
+          submitBtn.style.background = '';
+          submitBtn.disabled = false;
+        }, 3000);
+      } catch (error) {
+        submitBtn.innerHTML = '<span>ส่งไม่สำเร็จ ลองใหม่อีกครั้ง</span>';
+        submitBtn.style.background = 'linear-gradient(135deg, #dc2626, #b91c1c)';
+
+        setTimeout(() => {
+          submitBtn.innerHTML = originalText;
+          submitBtn.style.background = '';
+          submitBtn.disabled = false;
+        }, 3000);
+      }
     });
   }
 
