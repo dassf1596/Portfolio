@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kittituch Thampa — IT Support</title>
+  <meta name="description"
+    content="Portfolio ของ Kittituch Thampa — นักศึกษาเทคโนโลยีสารสนเทศและนวัตกรรม ผู้หลงใหลในการพัฒนาซอฟต์แวร์และเทคโนโลยี">
+  <meta property="og:title" content="Kittituch Thampa — IT Support">
+  <meta property="og:description" content="Portfolio ของ Kittituch Thampa — IT Support">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+Thai:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- Anime.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ============ CURSOR GLOW ============ -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- ============ NAVIGATION ============ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>KT<span class="logo-bracket">/&gt;</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#activities" class="nav-link">Activities</a></li>
+        <li><a href="#certifications" class="nav-link">Certifications</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============ HERO / HOME ============ -->
+  <section class="hero" id="home">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-particles" id="heroParticles"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-greeting anim-fade-up">สวัสดีครับ, ผมชื่อ กิตติธัช ทำผ้า </p>
+        <h1 class="hero-name anim-fade-up">
+          <span class="name-first">Kittituch</span>
+          <span class="name-last">Thampa</span>
+        </h1>
+        <div class="hero-title-wrapper anim-fade-up">
+          <span class="hero-title-label">I am a</span>
+          <span class="hero-title-typing" id="typingText"></span>
+          <span class="typing-cursor">|</span>
+        </div>
+        <p class="hero-description anim-fade-up">
+          นักศึกษาเทคโนโลยีสารสนเทศชั้นปีที่ 4 หลงใหลในการพัฒนาเว็บแอปพลิเคชัน
+          และเทคโนโลยี AI มุ่งมั่นสร้างสรรค์ผลงานที่มีคุณภาพและสร้างประโยชน์ให้สังคม
+        </p>
+        <div class="hero-cta anim-fade-up">
+          <a href="#projects" class="btn btn-primary">
+            <i data-lucide="folder-open" class="btn-icon"></i>
+            ดูผลงาน
+
+            <a href="#contact" class="btn btn-outline">
+              <i data-lucide="mail" class="btn-icon"></i>
+              ติดต่อ
+            </a>
+        </div>
+        <div class="hero-social anim-fade-up">
+          <a href="https://github.com/dassf1596" target="_blank" rel="noopener" aria-label="GitHub" class="social-link">
+            <img src="image/github.png" alt="GitHub logo" class="social-logo">
+          </a>
+          <a href="https://www.linkedin.com/in/kittituch-tham2506/" target="_blank" rel="noopener" aria-label="LinkedIn"
+            class="social-link">
+            <img src="image/linkedin.png" alt="LinkedIn logo" class="social-logo">
+          </a>
+          <a href="https://www.facebook.com/kouur.rat" target="_blank" rel="noopener" aria-label="Facebook"
+            class="social-link">
+            <img src="image/facebook.png" alt="Facebook logo" class="social-logo">
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual anim-fade-up">
+        <div class="hero-avatar-wrapper">
+          <div class="avatar-ring"></div>
+          <div class="avatar-ring avatar-ring-2"></div>
+          <div class="avatar-placeholder">
+            <i data-lucide="user" class="avatar-icon"></i>
+            <span class="avatar-label">Photo</span>
+          </div>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number" data-target="10">0</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="1">0</span>
+            <span class="stat-label">Certificates</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="4">0</span>
+            <span class="stat-label">Years Exp</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator anim-fade-up">
+      <div class="scroll-mouse">
+        <div class="scroll-dot"></div>
+      </div>
+      <span>Scroll Down</span>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ME ============ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-index">01</span>
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">เกี่ยวกับฉัน</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-content reveal-left">
+          <h3 class="about-heading">สวัสดีครับ! ผม<span class="highlight">Kittituch Thampa</span></h3>
+          <p class="about-text">
+            นักศึกษาชั้นปีที่ 4 สาขาเทคโนโลยีสารสนเทศและนวัตกรรม มหาวิทยาลัยกรุงเทพ
+            ผมหลงใหลในการเขียนโปรแกรมและการพัฒนาเว็บแอปพลิเคชันมาตั้งแต่ชั้นมัธยมปลาย
+            ปัจจุบันกำลังศึกษาเพิ่มเติมเกี่ยวกับ AI และ Automation
+          </p>
+          <p class="about-text">
+            นอกจากการเรียนแล้ว ผมยังชื่นชอบการเข้าร่วมกิจกรรม
+            และการทำโปรเจกต์ส่วนตัวเพื่อพัฒนาทักษะอยู่เสมอ
+          </p>
+
+          <div class="about-info-grid">
+            <div class="info-item">
+              <i data-lucide="graduation-cap" class="info-icon"></i>
+              <div>
+                <span class="info-label">การศึกษา</span>
+                <span class="info-value">ป.ตรี เทคโนโลยีสารสนเทศและนวัตกรรม</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i data-lucide="map-pin" class="info-icon"></i>
+              <div>
+                <span class="info-label">สถานที่</span>
+                <span class="info-value">คลองหลวง, คลองหนึ่ง, ปทุมธานี</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i data-lucide="calendar" class="info-icon"></i>
+              <div>
+                <span class="info-label">ชั้นปี</span>
+                <span class="info-value">ปี 4 (GPA 3.33)</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i data-lucide="languages" class="info-icon"></i>
+              <div>
+                <span class="info-label">ภาษา</span>
+                <span class="info-value">ไทย (Native), English (Intermediate)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-education reveal-right">
+          <h4 class="education-title">
+            <i data-lucide="book-open" class="edu-icon"></i>
+            Education Timeline
+          </h4>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2566 — ปัจจุบัน</span>
+                <h5>มหาวิทยาลัยกรุงเทพ</h5>
+                <p>ปริญญาตรี เทคโนโลยีสารสนเทศและนวัตกรรม</p>
+                <p>คณะเทคโนโลยีสารสนเทศ</p>
+                <span class="badge">GPA: 3.33</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2560 — 2566</span>
+                <h5>วิทยาลัยเทคโนโลยีมารีย์บริหารธุรกิจ</h5>
+                <p>แผนการเรียน เทคโนโลยีและสารสนเทศ</p>
+                <span class="badge">GPAX: 3.85</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="section section-dark" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-index">02</span>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-subtitle">ผลงานโครงการ</p>
+      </div>
+
+      <div class="projects-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web App</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+        <button class="filter-btn" data-filter="ai">AI / ML</button>
+        <button class="filter-btn" data-filter="design">Design</button>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <article class="project-card reveal-up" data-category="web">
+          <div class="project-image">
+            <div class="project-placeholder" style="--ph-hue: 220;">
+              <i data-lucide="shopping-cart" class="project-ph-icon"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link" aria-label="View Project">
+                <i data-lucide="external-link"></i>
+              </a>
+              <a href="#" class="project-link" aria-label="View Code">
+                <i data-lucide="github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">E-Commerce Platform</h3>
+            <p class="project-desc">
+              ระบบร้านค้าออนไลน์ครบวงจร รองรับการชำระเงิน การจัดการสินค้า และระบบสมาชิก
+              พัฒนาในรายวิชา Software Engineering
+            </p>
+            <div class="project-role">
+              <i data-lucide="user-check" class="role-icon"></i>
+              <span>หน้าที่: Full-Stack Developer — พัฒนาระบบ Backend API และหน้า Frontend ทั้งหมด</span>
+            </div>
+            <div class="project-tags">
+              <span class="tag">React</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">Stripe</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card reveal-up" data-category="ai">
+          <div class="project-image">
+            <div class="project-placeholder" style="--ph-hue: 280;">
+              <i data-lucide="brain" class="project-ph-icon"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link" aria-label="View Project">
+                <i data-lucide="external-link"></i>
+              </a>
+              <a href="#" class="project-link" aria-label="View Code">
+                <i data-lucide="github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Thai Sentiment Analysis</h3>
+            <p class="project-desc">
+              ระบบวิเคราะห์ความรู้สึกจากข้อความภาษาไทย ใช้ Deep Learning ในการประมวลผล
+              สามารถจำแนกอารมณ์ได้แม่นยำถึง 92%
+            </p>
+            <div class="project-role">
+              <i data-lucide="user-check" class="role-icon"></i>
+              <span>หน้าที่: ML Engineer — ออกแบบโมเดลและ Train ข้อมูล</span>
+            </div>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">TensorFlow</span>
+              <span class="tag">Flask</span>
+              <span class="tag">NLP</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card reveal-up" data-category="mobile">
+          <div class="project-image">
+            <div class="project-placeholder" style="--ph-hue: 150;">
+              <i data-lucide="heart-pulse" class="project-ph-icon"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link" aria-label="View Project">
+                <i data-lucide="external-link"></i>
+              </a>
+              <a href="#" class="project-link" aria-label="View Code">
+                <i data-lucide="github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Health Tracker App</h3>
+            <p class="project-desc">
+              แอปพลิเคชันติดตามสุขภาพ บันทึกการออกกำลังกาย แคลอรี่ และการนอนหลับ
+              พร้อมกราฟแสดงสถิติย้อนหลัง
+            </p>
+            <div class="project-role">
+              <i data-lucide="user-check" class="role-icon"></i>
+              <span>หน้าที่: Mobile Developer — พัฒนาแอปทั้ง iOS และ Android</span>
+            </div>
+            <div class="project-tags">
+              <span class="tag">Flutter</span>
+              <span class="tag">Dart</span>
+              <span class="tag">Firebase</span>
+              <span class="tag">REST API</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card reveal-up" data-category="design">
+          <div class="project-image">
+            <div class="project-placeholder" style="--ph-hue: 30;">
+              <i data-lucide="palette" class="project-ph-icon"></i>
+            </div>
+            <div class="project-overlay">
+              <a target="_blank" rel="noopener"
+                href="https://www.figma.com/proto/UdSdm6jh46CNTX97b6p6ir/Board-Game-For-Bu?page-id=29%3A390&node-id=29-391&p=f&viewport=25%2C218%2C0.35&t=XbIT05vxVHhlU9ZK-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=29%3A391"
+                class="project-link" aria-label="View Figma">
+                <i data-lucide="external-link"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Board Game App Design</h3>
+            <p class="project-desc">
+              ออกแบบ UI/UX สำหรับแอปพลิเคชันเกมกระดานของมหาลัยาลัย โดยเน้นประสบการณ์ผู้ใช้ที่เรียบง่ายและสนุกสนาน
+
+            </p>
+            <div class="project-role">
+              <i data-lucide="user-check" class="role-icon"></i>
+              <span>หน้าที่: UI/UX Designer — ออกแบบ User Flow และ Visual Design ทั้งหมด</span>
+            </div>
+            <div class="project-tags">
+              <span class="tag">Figma</span>
+              <span class="tag">UI/UX</span>
+              <span class="tag">Prototype</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="project-card reveal-up" data-category="web">
+          <div class="project-image">
+            <div class="project-placeholder" style="--ph-hue: 340;">
+              <i data-lucide="message-square" class="project-ph-icon"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link" aria-label="View Project">
+                <i data-lucide="external-link"></i>
+              </a>
+              <a href="#" class="project-link" aria-label="View Code">
+                <i data-lucide="github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Real-time Chat Application</h3>
+            <p class="project-desc">
+              แอปพลิเคชันแชทแบบเรียลไทม์ รองรับการส่งข้อความ รูปภาพ และไฟล์
+              พร้อมระบบแจ้งเตือนและการสร้างกลุ่มสนทนา
+            </p>
+            <div class="project-role">
+              <i data-lucide="user-check" class="role-icon"></i>
+              <span>หน้าที่: Backend Developer — พัฒนาระบบ WebSocket และ API</span>
+            </div>
+            <div class="project-tags">
+              <span class="tag">Next.js</span>
+              <span class="tag">Socket.io</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Redis</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 6 -->
+        <article class="project-card reveal-up" data-category="ai">
+          <div class="project-image">
+            <div class="project-placeholder" style="--ph-hue: 190;">
+              <i data-lucide="scan-face" class="project-ph-icon"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link" aria-label="View Project">
+                <i data-lucide="external-link"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Face Recognition Attendance</h3>
+            <p class="project-desc">
+              ระบบเช็คชื่อเข้าเรียนด้วยการจดจำใบหน้า ใช้ Computer Vision ประมวลผล
+              แบบเรียลไทม์ พร้อมรายงานสถิติการเข้าเรียน
+            </p>
+            <div class="project-role">
+              <i data-lucide="user-check" class="role-icon"></i>
+              <span>หน้าที่: Project Lead — ออกแบบระบบและพัฒนาส่วน AI Model</span>
+            </div>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">OpenCV</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">React</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TECHNICAL SKILLS ============ -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-index">03</span>
+        <h2 class="section-title">Technical Skills</h2>
+        <p class="section-subtitle">ทักษะทางเทคนิค</p>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Programming Languages -->
+        <div class="skill-category reveal-up">
+          <div class="skill-category-header">
+            <i data-lucide="code-2" class="skill-cat-icon"></i>
+            <h3>Programming Languages</h3>
+          </div>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Python</span>
+                <span class="skill-level">Advanced</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="90"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">JavaScript / TypeScript</span>
+                <span class="skill-level">Advanced</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="85"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">C / C++</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="65"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">HTML / CSS</span>
+                <span class="skill-level">Advanced</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="95"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Frameworks & Libraries -->
+        <div class="skill-category reveal-up">
+          <div class="skill-category-header">
+            <i data-lucide="layers" class="skill-cat-icon"></i>
+            <h3>Frameworks & Libraries</h3>
+          </div>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">React / Next.js</span>
+                <span class="skill-level">Advanced</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="85"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Node.js / Express</span>
+                <span class="skill-level">Advanced</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="80"></div>
+              </div>
+            </div>
+
+
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">TailwindCSS</span>
+                <span class="skill-level">Advanced</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="88"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Databases -->
+        <div class="skill-category reveal-up">
+          <div class="skill-category-header">
+            <i data-lucide="database" class="skill-cat-icon"></i>
+            <h3>Databases</h3>
+          </div>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">MySQL</span>
+                <span class="skill-level">Advanced</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="85"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">PostgreSQL</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="70"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">MongoDB</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="75"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Tools & Technologies -->
+        <div class="skill-category reveal-up">
+          <div class="skill-category-header">
+            <i data-lucide="wrench" class="skill-cat-icon"></i>
+            <h3>Tools & Technologies</h3>
+          </div>
+          <div class="skill-chips">
+            <span class="chip"><i data-lucide="git-branch" class="chip-icon"></i>Git / GitHub</span>
+            <span class="chip"><i data-lucide="container" class="chip-icon"></i>Docker</span>
+            <span class="chip"><i data-lucide="cloud" class="chip-icon"></i>AWS</span>
+            <span class="chip"><i data-lucide="terminal" class="chip-icon"></i>Linux / CLI</span>
+            <span class="chip">VS Code</span>
+            <span class="chip">Figma</span>
+            <span class="chip">Adobe illustrator</span>
+            <span class="chip">Adobe Photoshop</span>
+            <span class="chip">Jira</span>
+            <span class="chip">n8n</span>
+            <span class="chip">Vercel</span>
+            <span class="chip">Cloudflare</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ACTIVITIES ============ -->
+  <section class="section section-dark" id="activities">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-index">04</span>
+        <h2 class="section-title">Activities & Contributions</h2>
+        <p class="section-subtitle">กิจกรรมและการมีส่วนร่วม</p>
+      </div>
+
+      <div class="activities-grid">
+        <!-- Activity 1 -->
+        <div class="activity-card reveal-up">
+          <div class="activity-image">
+            <div class="activity-placeholder" style="--act-hue: 250;">
+              <i data-lucide="users" class="activity-ph-icon"></i>
+            </div>
+          </div>
+          <div class="activity-content">
+            <div class="activity-meta">
+              <span class="activity-type">💎Staff</span>
+              <span class="activity-date">
+                <i data-lucide="calendar" class="meta-icon"></i>
+                สิงหาคม 2567
+              </span>
+            </div>
+            <h3 class="activity-title">BU-ITI Openhouse 67</h3>
+            <p class="activity-desc">
+              เข้าร่วมกิจกรรม Openhouse ของคณะเทคโนโลยีสารสนเทศและนวัตกรรม
+              และเป็นส่วนหนึ่งของทีม Staff รับผิดชอบดูแลการจัดงานและให้ข้อมูลแก่ผู้เข้าร่วม
+            </p>
+            <span class="activity-award">
+              <i data-lucide="badge-check" class="award-icon"></i>
+              Staff Ground
+            </span>
+          </div>
+        </div>
+
+        <!-- Activity 2 -->
+        <div class="activity-card reveal-up">
+          <div class="activity-image">
+            <div class="activity-placeholder" style="--act-hue: 150;">
+              <i data-lucide="users" class="activity-ph-icon"></i>
+            </div>
+          </div>
+          <div class="activity-content">
+            <div class="activity-meta">
+              <span class="activity-type">💎 Staff</span>
+              <span class="activity-date">
+                <i data-lucide="calendar" class="meta-icon"></i>
+                สิงหาคม 2567
+              </span>
+            </div>
+            <h3 class="activity-title">BU-ITI Together 67</h3>
+            <p class="activity-desc">
+              เป็นพี่ประจำกลุ่มของน้องๆ เด็กใหม่ในกิจกรรม BU-ITI Together 67
+              ช่วยแนะนำและให้คำปรึกษาเกี่ยวกับการเรียนและการใช้ชีวิตในมหาวิทยาลัย
+              และดูแลน้องตลอดกิจกรรมให้เป็นไปอย่างราบรื่น
+            </p>
+            <span class="activity-award">
+              <i data-lucide="badge-check" class="award-icon"></i>
+              Staff Group Leader
+            </span>
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CERTIFICATIONS ============ -->
+  <section class="section" id="certifications">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-index">05</span>
+        <h2 class="section-title">Certifications</h2>
+        <p class="section-subtitle">ใบรับรองและการอบรม</p>
+      </div>
+
+      <div class="certs-grid">
+        <div class="cert-card reveal-up">
+          <div class="cert-image-wrap">
+            <img src="image/certification.png" alt="Cybersecurity Foundation Course certificate" class="cert-image">
+          </div>
+          <div class="cert-info">
+            <h3 class="cert-title">Cybersecurity Foundation Course</h3>
+            <p class="cert-issuer">NCSA e-Learning / สำนักงานคณะกรรมการการรักษาความมั่นคงปลอดภัยไซเบอร์แห่งชาติ</p>
+            <span class="cert-date">
+              <i data-lucide="calendar" class="meta-icon"></i>
+              พฤษภาคม 2569
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WORK EXPERIENCE ============ -->
+  <section class="section section-dark" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-index">06</span>
+        <h2 class="section-title">Work Experience</h2>
+        <p class="section-subtitle">ประสบการณ์การทำงาน</p>
+      </div>
+
+      <div class="experience-timeline">
+        <div class="exp-item reveal-up">
+          <div class="exp-dot"></div>
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <h3 class="exp-position">It Support</h3>
+                <p class="exp-company">
+                  <i data-lucide="building-2" class="exp-icon"></i>
+                  บ้านผู้สูงอายุราชสีมา
+                </p>
+              </div>
+              <span class="exp-period">
+                <i data-lucide="calendar" class="meta-icon"></i>
+                มิ.ย. — ส.ค. 2566
+              </span>
+            </div>
+            <ul class="exp-duties">
+              <li>ดูแลอุปกรณ์คอมพิวเตอร์ภายในองค์กร</li>
+              <li>ออกแบบแบรนเนอร์</li>
+              <li>ออกแบบเสื้อขององค์กร</li>
+              <li>ช่วยเหลืองานภายในองค์กร</li>
+            </ul>
+            <div class="exp-tags">
+              <span class="tag">Photoshop</span>
+              <span class="tag">Canva</span>
+              <span class="tag">Illustrator</span>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-index">07</span>
+        <h2 class="section-title">Contact</h2>
+        <p class="section-subtitle">ติดต่อสอบถาม</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal-left">
+          <h3 class="contact-heading">มาทำความรู้จักกันครับ!</h3>
+          <p class="contact-text">
+            หากสนใจร่วมงานหรือมีคำถามใด ๆ สามารถติดต่อผมได้ผ่านช่องทางด้านล่างนี้
+            ยินดีตอบกลับทุกข้อความครับ
+          </p>
+
+          <div class="contact-methods">
+            <a href="mailto:somchai.example@email.com" class="contact-method">
+              <div class="contact-method-icon">
+                <i data-lucide="mail"></i>
+              </div>
+              <div>
+                <span class="contact-method-label">Email</span>
+                <span class="contact-method-value">kittituch.tham@email.com</span>
+              </div>
+            </a>
+            <a href="tel:+66812345678" class="contact-method">
+              <div class="contact-method-icon">
+                <i data-lucide="phone"></i>
+              </div>
+              <div>
+                <span class="contact-method-label">โทรศัพท์</span>
+                <span class="contact-method-value">093-982-1233</span>
+              </div>
+            </a>
+            <div class="contact-method">
+              <div class="contact-method-icon">
+                <i data-lucide="map-pin"></i>
+              </div>
+              <div>
+                <span class="contact-method-label">สถานที่</span>
+                <span class="contact-method-value">ปทุมธานี, ประเทศไทย</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-social">
+            <h4>Social Media</h4>
+            <div class="social-links">
+              <a href="https://github.com/dassf1596" target="_blank" rel="noopener" class="social-card">
+                <i data-lucide="github"></i>
+                <span>GitHub</span>
+              </a>
+              <a href="https://www.facebook.com/kouur.rat" target="_blank" rel="noopener" class="social-card">
+                <i data-lucide="facebook"></i>
+                <span>Facebook</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper reveal-right">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">ชื่อ-นามสกุล</label>
+              <input type="text" id="name" name="name" required placeholder="กรุณาระบุชื่อ-นามสกุล">
+            </div>
+            <div class="form-group">
+              <label for="email">อีเมล</label>
+              <input type="email" id="email" name="email" required placeholder="email@example.com">
+            </div>
+            <div class="form-group">
+              <label for="subject">หัวข้อ</label>
+              <input type="text" id="subject" name="subject" required placeholder="หัวข้อที่ต้องการติดต่อ">
+            </div>
+            <div class="form-group">
+              <label for="message">ข้อความ</label>
+              <textarea id="message" name="message" rows="5" required placeholder="กรุณาระบุรายละเอียด..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <i data-lucide="send" class="btn-icon"></i>
+              ส่งข้อความ
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="#home" class="nav-logo">
+            <span class="logo-bracket">&lt;</span>KT<span class="logo-bracket">/&gt;</span>
+          </a>
+          <p>If it ain't error, don't touch it</p>
+        </div>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/Dassf1596" target="_blank" rel="noopener" aria-label="GitHub"><img
+              src="image/github.png" alt="GitHub logo" class="social-logo"></a>
+          <a href="https://linkedin.com/in/kittituch-thampa" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <img src="image/linkedin.png" alt="LinkedIn logo" class="social-logo">
+          </a>
+          <a href="https://facebook.com/kouur.rat" target="_blank" rel="noopener" aria-label="Facebook">
+            <img src="image/facebook.png" alt="Facebook logo" class="social-logo">
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Kittituch Thampa. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ BACK TO TOP ============ -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i data-lucide="chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
