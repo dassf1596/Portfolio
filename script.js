@@ -292,6 +292,61 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============ PROJECT FILTER ============
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
+  const projectPreviewModal = document.getElementById('projectPreviewModal');
+  const projectPreviewImage = document.getElementById('projectPreviewImage');
+  const projectPreviewTitle = document.getElementById('projectPreviewTitle');
+  const projectPreviewTriggers = document.querySelectorAll('[data-project-preview-trigger]');
+
+  function openProjectPreview(card) {
+    if (!projectPreviewModal || !projectPreviewImage || !projectPreviewTitle || !card) {
+      return;
+    }
+
+    const previewImage = card.getAttribute('data-preview-image');
+    const previewTitle = card.getAttribute('data-preview-title');
+
+    if (!previewImage || !previewTitle) {
+      return;
+    }
+
+    projectPreviewImage.src = previewImage;
+    projectPreviewImage.alt = `${previewTitle} project preview`;
+    projectPreviewTitle.textContent = previewTitle;
+    projectPreviewModal.classList.add('open');
+    projectPreviewModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('no-scroll');
+  }
+
+  function closeProjectPreview() {
+    if (!projectPreviewModal) {
+      return;
+    }
+
+    projectPreviewModal.classList.remove('open');
+    projectPreviewModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('no-scroll');
+  }
+
+  projectPreviewTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const card = trigger.closest('.project-card');
+      openProjectPreview(card);
+    });
+  });
+
+  if (projectPreviewModal) {
+    projectPreviewModal.addEventListener('click', (event) => {
+      if (event.target.hasAttribute('data-project-modal-close')) {
+        closeProjectPreview();
+      }
+    });
+  }
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && projectPreviewModal?.classList.contains('open')) {
+      closeProjectPreview();
+    }
+  });
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {

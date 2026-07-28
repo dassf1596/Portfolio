@@ -884,6 +884,9 @@ body:hover .cursor-glow {
   width: 48px;
   height: 48px;
   display: flex;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
   align-items: center;
   justify-content: center;
   background: var(--accent);
@@ -905,6 +908,122 @@ body:hover .cursor-glow {
 .project-link svg {
   width: 20px;
   height: 20px;
+}
+
+.project-preview-trigger {
+  appearance: none;
+}
+
+.project-preview-trigger:focus-visible {
+  outline: 2px solid var(--accent-light);
+  outline-offset: 3px;
+}
+
+.project-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+}
+
+.project-modal.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.project-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 7, 12, 0.82);
+  backdrop-filter: blur(14px);
+}
+
+.project-modal-dialog {
+  position: relative;
+  width: min(92vw, 920px);
+  max-height: 88vh;
+  padding: 18px;
+  background: rgba(15, 17, 26, 0.96);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  box-shadow: var(--shadow-glow);
+  transform: translateY(24px) scale(0.98);
+  transition: transform var(--transition-normal);
+  z-index: 1;
+  display: grid;
+  gap: 16px;
+}
+
+.project-modal.open .project-modal-dialog {
+  transform: translateY(0) scale(1);
+}
+
+.project-modal-image {
+  width: 100%;
+  max-height: 66vh;
+  object-fit: contain;
+  border-radius: 20px;
+  background: #0a0b10;
+}
+
+.project-modal-caption {
+  display: grid;
+  gap: 6px;
+  padding: 4px 6px 2px;
+}
+
+.project-modal-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+}
+
+.project-modal-caption h3 {
+  font-size: 1.15rem;
+}
+
+.project-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  cursor: pointer;
+  transition: transform var(--transition-normal), background var(--transition-normal);
+}
+
+.project-modal-close:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: scale(1.05);
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .project-modal-dialog {
+    width: min(94vw, 920px);
+    padding: 14px;
+    border-radius: 22px;
+  }
+
+  .project-modal-image {
+    max-height: 58vh;
+  }
 }
 
 .project-info {
