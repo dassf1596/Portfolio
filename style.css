@@ -63,6 +63,7 @@
 }
 
 html {
+  overflow-x: clip;
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
   font-size: 16px;
@@ -104,6 +105,22 @@ button {
 input, textarea {
   font-family: inherit;
   font-size: inherit;
+}
+
+:is(a, button):focus-visible {
+  outline: 2px solid var(--accent-light);
+  outline-offset: 4px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.hero-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 18px rgba(124, 92, 252, 0.45);
 }
 
 /* ========================================
@@ -876,7 +893,8 @@ body:hover .cursor-glow {
   transition: opacity var(--transition-normal);
 }
 
-.project-card:hover .project-overlay {
+.project-card:hover .project-overlay,
+.project-card:focus-within .project-overlay {
   opacity: 1;
 }
 
@@ -896,7 +914,8 @@ body:hover .cursor-glow {
   transition: all var(--transition-normal);
 }
 
-.project-card:hover .project-link {
+.project-card:hover .project-link,
+.project-card:focus-within .project-link {
   transform: translateY(0);
 }
 
@@ -928,7 +947,7 @@ body:hover .cursor-glow {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+  transition: opacity var(--transition-normal);
 }
 
 .project-modal.open {
@@ -945,6 +964,7 @@ body:hover .cursor-glow {
 }
 
 .project-modal-dialog {
+  overflow-y: auto;
   position: relative;
   width: min(92vw, 920px);
   max-height: 88vh;
@@ -990,6 +1010,7 @@ body:hover .cursor-glow {
 }
 
 .project-modal-close {
+  font-size: 28px;
   position: absolute;
   top: 14px;
   right: 14px;
@@ -1158,7 +1179,7 @@ body.no-scroll {
 
 .skill-progress {
   height: 100%;
-  width: 0;
+  width: var(--skill-width, 0%);
   background: var(--gradient-primary);
   border-radius: 6px;
   transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1573,6 +1594,7 @@ body.no-scroll {
 }
 
 .contact-method-value {
+  overflow-wrap: anywhere;
   font-weight: 500;
   font-size: 0.95rem;
 }
@@ -1621,6 +1643,12 @@ body.no-scroll {
 }
 
 /* Contact Form */
+.contact-note {
+  margin-top: 16px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
 .contact-form-wrapper {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -1794,25 +1822,21 @@ body.no-scroll {
    REVEAL ANIMATIONS
    ======================================== */
 .anim-fade-up {
-  opacity: 0;
-  transform: translateY(40px);
+  opacity: 1;
 }
 
 .reveal-up {
-  opacity: 0;
-  transform: translateY(50px);
+  opacity: 1;
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .reveal-left {
-  opacity: 0;
-  transform: translateX(-50px);
+  opacity: 1;
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .reveal-right {
-  opacity: 0;
-  transform: translateX(50px);
+  opacity: 1;
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -1875,29 +1899,38 @@ body.no-scroll {
     --section-padding: 60px 0;
   }
 
-  .nav-toggle {
+  .js .nav-toggle {
     display: flex;
   }
 
-  .nav-menu {
+  .js .nav-menu {
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 280px;
+    right: 0;
+    transform: translateX(100%);
+    visibility: hidden;
+    width: min(280px, 100vw);
     height: 100vh;
+    height: 100dvh;
+    overflow-y: auto;
     background: rgba(10, 10, 15, 0.97);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
     padding: 80px 24px 24px;
     gap: 4px;
-    transition: right var(--transition-normal);
+    transition: transform var(--transition-normal), visibility var(--transition-normal);
     border-left: 1px solid var(--border);
   }
 
-  .nav-menu.open {
-    right: 0;
+  .js .nav-menu.open {
+    transform: translateX(0);
+    visibility: visible;
   }
+
+  html:not(.js) .navbar { position: static; }
+  html:not(.js) .nav-container { flex-wrap: wrap; }
+  html:not(.js) .nav-menu { flex-wrap: wrap; justify-content: center; }
 
   .nav-link {
     font-size: 1rem;
@@ -1992,7 +2025,7 @@ body.no-scroll {
 
   .hero-title-wrapper {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 4px;
   }
 
@@ -2026,4 +2059,18 @@ body.no-scroll {
   .social-links {
     grid-template-columns: 1fr;
   }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .project-overlay { opacity: 1; background: rgba(10, 10, 15, 0.3); }
+  .project-link { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .typing-cursor, .cursor-glow, .hero-particles { display: none; }
 }
