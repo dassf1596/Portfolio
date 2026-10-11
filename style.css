@@ -463,8 +463,8 @@ body:hover .cursor-glow {
 }
 
 .social-logo {
-  width: 35px;
-  height: 35px;
+  width: 22px;
+  height: 22px;
   object-fit: contain;
   display: block;
 }
@@ -517,6 +517,13 @@ body:hover .cursor-glow {
   justify-content: center;
   gap: 8px;
   overflow: hidden;
+}
+
+.avatar-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .avatar-icon {
@@ -1764,8 +1771,8 @@ body.no-scroll {
 }
 
 .footer-social a .social-logo {
-  width: 25px;
-  height: 25px;
+  width: 22px;
+  height: 22px;
 }
 
 .footer-bottom {
